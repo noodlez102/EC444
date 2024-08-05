@@ -1,0 +1,29 @@
+-- Existing sdkconfig 'C:/Users/arthu/Downloads/EC444/Roc_paper_scissors/Rock_paper_scissors/sdkconfig' renamed to 'C:/Users/arthu/Downloads/EC444/Roc_paper_scissors/Rock_paper_scissors/sdkconfig.old'.
+-- Found Git: C:/Users/arthu/.espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/arthu/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/arthu/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/arthu/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+NOTICE: Skipping optional dependency: protocol_examples_tapif_io
+Processing 2 dependencies:
+[1/2] idf (5.2.1)
+[2/2] protocol_examples_common (*)
+NOTICE: Skipping optional dependency: protocol_examples_tapif_io
+-- Project sdkconfig file C:/Users/arthu/Downloads/EC444/Roc_paper_scissors/Rock_paper_scissors/sdkconfig
+Loading defaults file C:/Users/arthu/Downloads/EC444/Roc_paper_scissors/Rock_paper_scissors/sdkconfig.defaults...
+-- Compiler supported targets: 
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/arthu/Downloads/EC444/Roc_paper_scissors/Rock_paper_scissors/build/CMakeFiles/CMakeOutput.log".

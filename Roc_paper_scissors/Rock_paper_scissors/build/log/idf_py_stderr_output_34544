@@ -1,0 +1,13 @@
+CMake Error at C:/Users/arthu/esp/v5.2.1/esp-idf/components/xtensa/project_include.cmake:18 (if):
+  if given arguments:
+
+    "NOT" "(" "Generic" "STREQUAL" "Generic" "AND" "MATCHES" "xtensa" ")"
+
+  Unknown arguments specified
+Call Stack (most recent call first):
+  C:/Users/arthu/esp/v5.2.1/esp-idf/tools/cmake/build.cmake:400 (include)
+  C:/Users/arthu/esp/v5.2.1/esp-idf/tools/cmake/build.cmake:624 (__build_process_project_includes)
+  C:/Users/arthu/esp/v5.2.1/esp-idf/tools/cmake/project.cmake:605 (idf_build_process)
+  CMakeLists.txt:10 (project)
+
+
