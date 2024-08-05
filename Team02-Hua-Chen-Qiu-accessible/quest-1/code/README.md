@@ -1,0 +1,3 @@
+# Code Readme
+
+Our codes are all inside main.c. The code has 5 tasks running over FreeRTOS, 3 for the buttons (task_switch_button, task_switch_button, and task_down_button), 1 for the display (task_display), and 1 for the timer and servo control (task_main). The buttons are used to set the countdown time. The display shows the time left until the next walk. The timer is used to keep track of time. We used global flags so each task can interact with each other. We also used the ISR to keep track of time. We used RTOS to have 5 different tasks. We added pulldown resistors for the buttons, and we used the ISR to keep track of time. It was important to add the pull down resistors to the button because without it the buttons would keep activating.

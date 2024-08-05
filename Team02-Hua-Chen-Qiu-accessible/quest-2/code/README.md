@@ -1,0 +1,5 @@
+# Code Readme
+
+We use the FreeRTOS real-time operating system to manage 5 tasks related to sensor data acquisition and servo motor control. It includes 3 tasks to read data from a thermistor (for temperature measurements), an infrared (IR) range sensor, and an ultrasonic range sensor, each connected via ADC channels. These sensors provide environmental data, such as temperature and distances to objects. Additionally, another task controls a servo motor, using the MCPWM module to generate precise pulse widths for angle adjustment. The servo's angle is varied dynamically in one of the tasks. Calibration and characterization of the ADC channels are performed to ensure accurate readings, taking into account potential variations in the ADC reference voltage. The last task in the system periodically reports sensor readings and the current servo angle. 
+
+This setup could be used in our Node.js application where it reads the data using serial communication and writes it to a file. The data is then visualized using Canvas.js to create graphs that show the sensor readings over time and angle.

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UDP Message Display</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="udpMessage"></div>
+  <button onclick="toggleNewMsg()">Toggle New Message</button>
+  <button onclick="toggleNewMsg1()">Toggle New Message</button>
+  <button onclick="toggleNewMsg2()">Toggle New Message</button>
+  <button onclick="toggleNewMsg3()">Toggle New Message</button>
+  <button onclick="toggleNewMsg4()">Toggle New Message</button>
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    var newMsg = "0"; // Initialize newMsg as "0"
+    var lastMessage = ''; // Variable to store the last message
+    var chart; // Variable to store the chart object
+
+    socket.on('message', function(msg) {
+      displayMessage(msg);
+    });
+
+
+
+
+    function toggleNewMsg() {
+      newMsg = "0"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+
+    }
+    function toggleNewMsg1() {
+      newMsg = "1"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+
+    }
+    function toggleNewMsg2() {
+      newMsg = "2"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+
+    }
+    function toggleNewMsg3() {
+      newMsg = "3"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+
+    }
+    function toggleNewMsg4() {
+      newMsg = "4"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+
+    }
+
+  </script>
+</body>
+</html>

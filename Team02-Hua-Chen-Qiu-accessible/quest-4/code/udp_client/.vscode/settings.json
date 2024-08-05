@@ -1,0 +1,15 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.adapterTargetName": "esp32",
+  "idf.openOcdConfigs": [
+    "board/esp32-bridge.cfg"
+  ],
+  "files.associations": {
+    "stdio.h": "c",
+    "gpio.h": "c",
+    "pulse_cnt.h": "c",
+    "esp_adc_cal.h": "c"
+  },
+  "idf.portWin": "COM5",
+  "idf.flashType": "UART"
+}

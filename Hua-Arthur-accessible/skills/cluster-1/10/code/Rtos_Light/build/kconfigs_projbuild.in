@@ -1,0 +1,6 @@
+source "C:/Users/arthu/.espressif/frameworks/esp-idf-v4.4.6/components/app_update/Kconfig.projbuild"
+source "C:/Users/arthu/.espressif/frameworks/esp-idf-v4.4.6/components/bootloader/Kconfig.projbuild"
+source "C:/Users/arthu/.espressif/frameworks/esp-idf-v4.4.6/components/esp_rom/Kconfig.projbuild"
+source "C:/Users/arthu/.espressif/frameworks/esp-idf-v4.4.6/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/arthu/.espressif/frameworks/esp-idf-v4.4.6/components/partition_table/Kconfig.projbuild"
+source "C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-1/10/code/Rtos_Light/main/Kconfig.projbuild"

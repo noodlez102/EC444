@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UDP Message Display</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="udpMessage"></div>
+  <button onclick="toggleNewMsg()">Toggle New Message</button>
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    var newMsg = "0"; // Initialize newMsg as "0"
+    var lastMessage = ''; // Variable to store the last message
+    var chart; // Variable to store the chart object
+
+    socket.on('message', function(msg) {
+      displayMessage(msg);
+    });
+
+    function displayMessage(msg) {
+      var messageDiv = document.getElementById('udpMessage');
+      var parsedData = parseMessage(msg);
+      var table = '<table border="1">';
+      table += '<tr><th>Parameter</th><th>Value</th></tr>';
+      for (var key in parsedData) {
+        table += '<tr><td>' + key + '</td><td>' + parsedData[key] + '</td></tr>';
+      }
+      table += '</table>';
+      messageDiv.innerHTML = table;
+      lastMessage = msg; // Update the last message
+    }
+
+    function parseMessage(msg) {
+      var data = {};
+      var keyValuePairs = msg.split(','); // Split the message by comma to get individual key-value pairs
+      for (var i = 0; i < keyValuePairs.length; i++) {
+        var pair = keyValuePairs[i].trim().split(':'); // Split each key-value pair by colon
+        if (pair.length === 2) {
+          var key = pair[0].trim(); // Extract the key
+          var value = pair[1].trim(); // Extract the value
+          data[key] = value; // Add key-value pair to the data object
+        }
+      }
+      return data;
+    }
+
+
+
+    function toggleNewMsg() {
+      newMsg = newMsg === "0" ? "1" : "0"; // Toggle newMsg between "0" and "1"
+      socket.emit('updateResponseMsg', newMsg);
+    }
+  </script>
+</body>
+</html>

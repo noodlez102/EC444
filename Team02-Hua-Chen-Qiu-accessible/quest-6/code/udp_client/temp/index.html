@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gesture Plot</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script>
+        var dataPoints = {
+            1: { label: "Rock", y: 0 },
+            2: { label: "Paper", y: 0 },
+            3: { label: "Scissors", y: 0 }
+        };
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: "Gesture Frequency"
+            },
+            data: [{
+                type: "column",
+                dataPoints: Object.values(dataPoints)
+            }]
+        });
+        chart.render();
+
+        // Connect to the Socket.IO server
+        var socket = io(); // Adjust the URL to your WebSocket server
+
+        socket.on('gestureData', function (gestureCounts) {
+            // Update the chart with new data
+            console.log(gestureCounts);
+            Object.keys(gestureCounts).forEach(function (key) {
+                dataPoints[key].y = gestureCounts[key];
+            });
+            chart.render(); // Re-render the chart with the updated data
+        });
+
+    </script>
+</body>
+
+</html>

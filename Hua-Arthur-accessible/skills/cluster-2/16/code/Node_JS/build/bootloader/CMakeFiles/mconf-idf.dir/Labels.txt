@@ -1,0 +1,13 @@
+# Target labels
+ mconf-idf
+# Source files and their labels
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/CMakeFiles/mconf-idf
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/CMakeFiles/mconf-idf.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/CMakeFiles/mconf-idf-complete.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch.rule
+C:/Users/arthu/Downloads/EC444/Hua-Arthur/skills/cluster-2/16/code/Node_JS/build/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update.rule

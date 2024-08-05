@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsed Data Bar Graph</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+    <h1>Parsed Data Bar Graph</h1>
+    <div id="data-chart" style="height: 400px; width: 800px;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script>
+        // Establish a Socket.IO connection
+        var socket = io();
+
+        // Initialize arrays to store data points
+        var smokeDataPoints = [];
+        var tempDataPoints = [];
+
+        // Create the bar graph
+        var chart = new CanvasJS.Chart("data-chart", {
+            animationEnabled: true,
+            title: {
+                text: "Parsed Data Bar Graph"
+            },
+            axisX: {
+                title: "Time"
+            },
+            axisY: {
+                title: "Value"
+            },
+            data: [
+                {
+                    type: "column",
+                    name: "Smoke Level",
+                    showInLegend: true,
+                    dataPoints: smokeDataPoints
+                },
+                {
+                    type: "column",
+                    name: "Temperature",
+                    showInLegend: true,
+                    dataPoints: tempDataPoints
+                }
+            ]
+        });
+
+        // Listen for 'message' events from the server
+        socket.on('message', function (data) {
+            // Assuming data has the structure: { time, id, smoke, temp }
+
+            // Add data points to the respective arrays
+            smokeDataPoints.push({ label: data.time.toString(), y: data.smoke });
+            tempDataPoints.push({ label: data.time.toString(), y: data.temp });
+
+            // Update the chart
+            chart.render();
+        });
+
+        chart.render();
+    </script>
+</body>
+</html>

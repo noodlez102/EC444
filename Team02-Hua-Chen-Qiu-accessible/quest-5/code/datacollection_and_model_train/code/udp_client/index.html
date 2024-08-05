@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UDP Message Display</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div id="udpMessage"></div>
+    <body>"0 = stop 1 = start 2= left 3 = right 4=dont update"</body>
+    <input type="text" id="msgInput" placeholder="Type a word..." />
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      var newMsg = "0"; // Initialize newMsg as "0"
+      var msg = "";
+      var lastMessage = ""; // Variable to store the last message
+      var chart; // Variable to store the chart object
+
+      socket.on("message", function (msg) {
+        displayMessage(msg);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        msg = document.getElementById("msgInput").value;
+        switch (event.key) {
+          case " ":
+            newMsg = "0";
+            break;
+          case "w":
+            newMsg = "1";
+            break;
+          case "a":
+            newMsg = "2";
+            break;
+          case "d":
+            newMsg = "3";
+            break;
+          case "s":
+            newMsg = "4";
+            break;
+          default:
+            return; // Quit the function if the key pressed is not one of the expected keys
+        }
+        newMsg += "," + msg; // Append the message to newMsg
+        socket.emit("updateResponseMsg", newMsg);
+      });
+    </script>
+  </body>
+</html>
